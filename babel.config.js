@@ -10,7 +10,7 @@ module.exports = function(env, configs) {
           modules: false,
           // 松散模式生成的代码更少
           loose: true,
-          useBuitIns: 'usage',
+          useBuiltIns: 'usage',
           debug: env === 'development'
         }
       ],
