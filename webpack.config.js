@@ -210,7 +210,8 @@ module.exports = function(fn) {
           new TerserPlugin({
             cache: true,
             parallel: true
-          })
+          }),
+          new OptimizeCSSAssetsPlugin({})
         ],
         splitChunks: {
           chunks(chunk) {
