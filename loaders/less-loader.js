@@ -28,7 +28,7 @@ module.exports = function(env, configs) {
       {
         loader: 'less-loader',
         options: {
-          importLoaders: 1
+          javascriptEnabled: 1
         }
       }
     ]

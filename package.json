@@ -1,6 +1,6 @@
 {
   "name": "fe-build-eago",
-  "version": "0.0.9-rc",
+  "version": "0.0.10-rc",
   "description": "build tool",
   "main": "webpack.config.js",
   "scripts": {
@@ -35,6 +35,7 @@
     "@sentry/webpack-plugin": "^1.6.2",
     "babel-loader": "^8.0.5",
     "babel-plugin-import": "^1.11.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "clean-webpack-plugin": "^2.0.1",
     "copy-webpack-plugin": "^5.0.1",
     "css-loader": "^2.1.1",

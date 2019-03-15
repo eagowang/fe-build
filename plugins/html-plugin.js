@@ -27,11 +27,7 @@ module.exports = function(env, configs) {
       // 需要注入资源，css注入在head底部，js注入在body底部
       inject: true,
       // 开启xhtml严格规范
-      xhtml: true,
-      // 注入的资源模块
-      chunks: item.chunks,
-      // manual - 按chunks指定的顺序排序
-      chunksSortMode: 'manual'
+      xhtml: true
     };
 
     // 使用模板内容而不是模板文件
