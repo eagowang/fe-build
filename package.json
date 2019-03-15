@@ -1,6 +1,6 @@
 {
   "name": "fe-build-eago",
-  "version": "0.0.7-rc",
+  "version": "0.0.9-rc",
   "description": "build tool",
   "main": "webpack.config.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
@@ -64,7 +65,7 @@
     "ts-import-plugin": "^1.5.5",
     "ts-loader": "^5.3.3",
     "url-loader": "^1.1.2",
-    "webpack": "^4.29.6",
+    "webpack": "4.28.4",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   }

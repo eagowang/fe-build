@@ -26,7 +26,10 @@ module.exports = function(env, configs) {
         }
       },
       {
-        loader: 'less-loader'
+        loader: 'less-loader',
+        options: {
+          importLoaders: 1
+        }
       }
     ]
   };
