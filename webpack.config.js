@@ -2,7 +2,7 @@ const path = require('path');
 const url = require('url');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // dev-server端口号，默认10000
 let devServerPort = 10000;
 
