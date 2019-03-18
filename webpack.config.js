@@ -214,11 +214,18 @@ module.exports = function(fn) {
           new OptimizeCSSAssetsPlugin({})
         ],
         splitChunks: {
-          chunks(chunk) {
-            return chunk.name;
+          cacheGroups: {
+            vendor: {
+              chunks: 'initial',
+              test: 'vendor',
+              name: 'vendor',
+              enforce: true
+            }
           }
         },
-        runtimeChunk: true
+        runtimeChunk: {
+          name: 'manifest'
+        }
       },
       module: {
         // 各种默认loader配置

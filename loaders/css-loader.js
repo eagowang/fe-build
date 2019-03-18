@@ -16,7 +16,7 @@ module.exports = function(env, configs) {
       {
         loader: 'postcss-loader',
         options: {
-          import: {
+          config: {
             path: path.resolve(__dirname, '../postcss.config.js'),
             ctx: { env, configs }
           }
