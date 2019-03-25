@@ -1,6 +1,6 @@
 {
   "name": "fe-build-eago",
-  "version": "0.1.5-alpha.2",
+  "version": "0.1.5-alpha.3",
   "description": "build tool",
   "main": "webpack.config.js",
   "scripts": {
