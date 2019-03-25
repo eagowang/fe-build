@@ -15,7 +15,7 @@ module.exports = function(env, configs) {
     'process.env': {
       NODE_ENV: JSON.stringify(env),
       GIT_COMMIT_HASH: JSON.stringify(GIT_COMMIT_HASH),
-      RELEASE: JSON.stringify(releaseId)
-    }
+      RELEASE: JSON.stringify(releaseId),
+    },
   });
 };

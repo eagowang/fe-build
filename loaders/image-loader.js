@@ -7,9 +7,9 @@ module.exports = function() {
       {
         loader: 'file-loader',
         options: {
-          name: '[name].[hash:10].[ext]'
-        }
-      }
-    ]
+          name: '[name].[hash:10].[ext]',
+        },
+      },
+    ],
   };
 };

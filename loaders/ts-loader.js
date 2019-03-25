@@ -10,15 +10,15 @@ module.exports = function(env, configs) {
     include: [
       configs.srcDir,
       path.resolve(configs.srcDir, '../node_modules/@fe'),
-      ...configs.loaderInclude
+      ...configs.loaderInclude,
     ],
     use: [
       {
         loader: 'babel-loader',
         options: {
           cacheDirectory: env === 'development',
-          ...babelrc(env, configs)
-        }
+          ...babelrc(env, configs),
+        },
       },
       {
         loader: 'ts-loader',
@@ -26,14 +26,14 @@ module.exports = function(env, configs) {
           transpileOnly: true,
           getCustomTransformers() {
             return {
-              before: [tsImportPluginFactory({ style: true })]
+              before: [tsImportPluginFactory({ style: true })],
             };
           },
           compilerOptions: {
-            module: 'es2015'
-          }
-        }
-      }
-    ]
+            module: 'es2015',
+          },
+        },
+      },
+    ],
   };
 };

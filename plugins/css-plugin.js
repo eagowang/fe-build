@@ -6,6 +6,6 @@ module.exports = function(env) {
   return new MiniCssExtractPlugin({
     filename: `[name]${env === 'development' ? '' : '.[contenthash:10]'}.css`,
     chunkFilename:
-      env === 'development ' ? '[id].css' : '[id].[contenthash:10].css'
+      env === 'development ' ? '[id].css' : '[id].[contenthash:10].css',
   });
 };

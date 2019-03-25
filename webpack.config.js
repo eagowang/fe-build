@@ -60,7 +60,7 @@ module.exports = function(fn) {
           // 例如：[{view: 'views/store.ejs', chunks: ['store']}, ...]
           // 其中：view是模板视图，chunks是此视图要引入的模块（同名的js和css模块）
           // view需要`template.source`选项结合起来看
-          views: configs.htmls || []
+          views: configs.htmls || [],
         },
         configs.template
       ),
@@ -84,7 +84,7 @@ module.exports = function(fn) {
           modules: [],
 
           // 额外的模块别名配置
-          alias: []
+          alias: [],
         },
         configs.resolve
       ),
@@ -132,7 +132,7 @@ module.exports = function(fn) {
         'ie >= 9',
         'safari >= 7',
         'ios >= 6',
-        'android >=4'
+        'android >=4',
       ],
 
       // 本地开发环境，启动dev-server（包含热替换）
@@ -147,12 +147,12 @@ module.exports = function(fn) {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Headers':
               'Content-Type,Content-Length,Accept,X-Requested-With',
-            'Access-Control-Allow-Methods': 'PUT,POST,GET,DELETE,OPTIONS'
-          }
+            'Access-Control-Allow-Methods': 'PUT,POST,GET,DELETE,OPTIONS',
+          },
         },
         configs.devServer
       ),
-      loaderInclude: configs.loaderInclude || []
+      loaderInclude: configs.loaderInclude || [],
     };
 
     return {
@@ -180,7 +180,7 @@ module.exports = function(fn) {
 
         // 异步js模块文件名配置
         // test or prod环境，带上md5 hash
-        chunkFilename: `[name]${isDev ? '' : '.[chunkhash:10]'}.chunk.js`
+        chunkFilename: `[name]${isDev ? '' : '.[chunkhash:10]'}.chunk.js`,
       },
 
       // 模块解析配置
@@ -193,14 +193,14 @@ module.exports = function(fn) {
           '.tsx',
           '.coffee',
           '.json',
-          ...configs.resolve.extensions
+          ...configs.resolve.extensions,
         ],
         modules: [
           path.resolve(__dirname, 'node_modules'),
           path.resolve(configs.srcDir, '../node_modules'),
-          configs.srcDir
+          configs.srcDir,
         ].concat(configs.resolve.modules),
-        alias: configs.resolve.alias
+        alias: configs.resolve.alias,
       },
 
       // 优化
@@ -209,9 +209,9 @@ module.exports = function(fn) {
         minimizer: [
           new TerserPlugin({
             cache: true,
-            parallel: true
+            parallel: true,
           }),
-          new OptimizeCSSAssetsPlugin({})
+          new OptimizeCSSAssetsPlugin({}),
         ],
         splitChunks: {
           cacheGroups: {
@@ -219,31 +219,31 @@ module.exports = function(fn) {
               chunks: 'initial',
               test: 'vendor',
               name: 'vendor',
-              enforce: true
-            }
-          }
+              enforce: true,
+            },
+          },
         },
         runtimeChunk: {
-          name: 'manifest'
-        }
+          name: 'manifest',
+        },
       },
       module: {
         // 各种默认loader配置
         // 结合其他业务房配置的loader
-        rules: [].concat(require('./loaders')(env, configs), configs.loaders)
+        rules: [].concat(require('./loaders')(env, configs), configs.loaders),
       },
 
       plugins: [].concat(require('./plugins')(env, configs), configs.plugins),
 
       stats: {
-        children: false
+        children: false,
       },
 
       // 启动source-map开发工具，方便调试源代码
       devtool: 'source-map',
 
       //本地开发环境，启动dev-server（包含热替换）
-      devServer: configs.devServer
+      devServer: configs.devServer,
     };
   };
 };

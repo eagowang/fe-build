@@ -8,10 +8,10 @@ module.exports = function() {
         {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash:10].[ext]'
-          }
-        }
-      ]
+            name: '[name].[hash:10].[ext]',
+          },
+        },
+      ],
     },
 
     // 处理音频资源
@@ -21,10 +21,10 @@ module.exports = function() {
         {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash:10].[ext]'
-          }
-        }
-      ]
+            name: '[name].[hash:10].[ext]',
+          },
+        },
+      ],
     },
 
     // 处理视频资源
@@ -34,10 +34,10 @@ module.exports = function() {
         {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash:10].[ext]'
-          }
-        }
-      ]
-    }
+            name: '[name].[hash:10].[ext]',
+          },
+        },
+      ],
+    },
   ];
 };

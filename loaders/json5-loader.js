@@ -2,6 +2,6 @@
 module.exports = function() {
   return {
     test: /\.json5$/,
-    use: 'json5-loader'
+    use: 'json5-loader',
   };
 };

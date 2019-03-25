@@ -8,12 +8,12 @@ module.exports = function({ env, options }) {
       require('postcss-css-variables')(),
       require('postcss-preset-env')({
         browsers: options.configs.browsers,
-        features: { customProperties: false }
+        features: { customProperties: false },
       }),
       require('postcss-reporter')({ clearAllMessages: true }),
       require('cssnano')({
-        preset: isDev ? 'default' : 'advanced'
-      })
-    ]
+        preset: isDev ? 'default' : 'advanced',
+      }),
+    ],
   };
 };

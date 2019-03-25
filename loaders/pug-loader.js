@@ -7,9 +7,9 @@ module.exports = function() {
       {
         loader: 'pug-loader',
         options: {
-          pretty: true
-        }
-      }
-    ]
+          pretty: true,
+        },
+      },
+    ],
   };
 };

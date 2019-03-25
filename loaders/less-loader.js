@@ -13,24 +13,24 @@ module.exports = function(env, configs) {
       {
         loader: 'css-loader',
         options: {
-          importLoaders: 1
-        }
+          importLoaders: 1,
+        },
       },
       {
         loader: 'postcss-loader',
         options: {
           config: {
             path: path.resolve(__dirname, '../postcss.config.js'),
-            ctx: { env, configs }
-          }
-        }
+            ctx: { env, configs },
+          },
+        },
       },
       {
         loader: 'less-loader',
         options: {
-          javascriptEnabled: 1
-        }
-      }
-    ]
+          javascriptEnabled: 1,
+        },
+      },
+    ],
   };
 };

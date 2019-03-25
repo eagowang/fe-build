@@ -62,12 +62,12 @@ module.exports = function(fn) {
           modules: [],
 
           // 额外的模块别名配置
-          alias: []
+          alias: [],
         },
         configs.resolve
       ),
 
-      loaderInclude: configs.loaderInclude || []
+      loaderInclude: configs.loaderInclude || [],
     };
 
     return {
@@ -94,7 +94,7 @@ module.exports = function(fn) {
         // 输出sourcemap，方便浏览器调试源代码
         sourceMapFilename: 'sourcemaps/[file].map',
 
-        pathinfo: false
+        pathinfo: false,
       },
 
       // 模块解析配置
@@ -107,14 +107,14 @@ module.exports = function(fn) {
           '.tsx',
           '.coffee',
           '.json',
-          ...configs.resolve.extensions
+          ...configs.resolve.extensions,
         ],
         modules: [
           path.resolve(__dirname, 'node_modules'),
           path.resolve(configs.srcDir, '../', 'node_modules'),
-          configs.srcDir
+          configs.srcDir,
         ].concat(configs.resolve.modules),
-        alias: configs.resolve.alias
+        alias: configs.resolve.alias,
       },
 
       module: {
@@ -125,17 +125,17 @@ module.exports = function(fn) {
             include: [
               configs.srcDir,
               path.resolve(configs.srcDir, '../node_modules/@fe'),
-              ...configs.loaderInclude
+              ...configs.loaderInclude,
             ],
             use: [
               {
                 loader: 'babel-loader',
-                options: getBabelrc()
+                options: getBabelrc(),
               },
               {
-                loader: 'ts-loader'
-              }
-            ]
+                loader: 'ts-loader',
+              },
+            ],
           },
           {
             test: /\.jsx?$/,
@@ -143,18 +143,18 @@ module.exports = function(fn) {
             include: [
               configs.srcDir,
               path.resolve(configs.srcDir, '../node_modules/@fe'),
-              ...configs.loaderInclude
+              ...configs.loaderInclude,
             ],
             use: [
               {
                 loader: 'babel-loader',
-                options: getBabelrc()
-              }
-            ]
+                options: getBabelrc(),
+              },
+            ],
           },
           {
             test: /\.(css|less)$/,
-            use: ['ignore-loader']
+            use: ['ignore-loader'],
           },
           {
             test: /\.(jpg|png|gif|svg)$/i,
@@ -162,35 +162,35 @@ module.exports = function(fn) {
               {
                 loader: 'file-loader',
                 options: {
-                  name: '[name].[hash:10].[ext]'
-                }
-              }
-            ]
+                  name: '[name].[hash:10].[ext]',
+                },
+              },
+            ],
           },
           {
             test: /\.json5$/,
-            use: 'json5-loader'
-          }
-        ]
+            use: 'json5-loader',
+          },
+        ],
       },
 
       plugins: [
         new CleanWebpackPlugin([configs.distDir], {
-          allowExternal: true
+          allowExternal: true,
         }),
         new webpack.DefinePlugin({
           'process.env': {
-            NODE_ENV: JSON.stringify(env)
-          }
-        })
+            NODE_ENV: JSON.stringify(env),
+          },
+        }),
       ],
 
       stats: {
         children: false,
-        timings: true
+        timings: true,
       },
 
-      devtool: 'source-map'
+      devtool: 'source-map',
     };
   };
 };
@@ -203,19 +203,19 @@ function getBabelrc() {
         {
           target: {
             node: 'current',
-            uglify: false
+            uglify: false,
           },
           forceAllTransforms: false,
-          modules: false
-        }
+          modules: false,
+        },
       ],
-      ['react']
+      ['react'],
     ],
     plugins: [
       '@babel/plugin-transform-runtime',
       '@babel/proposal-class-properties',
       '@babel/proposal-object-rest-spread',
-      '@babel/plugin-syntax-dynamic-import'
-    ]
+      '@babel/plugin-syntax-dynamic-import',
+    ],
   };
 }

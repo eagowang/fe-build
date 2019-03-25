@@ -8,9 +8,9 @@ module.exports = function() {
         options: {
           minimize: true,
           removeComments: true,
-          collapseWhitespace: true
-        }
-      }
-    ]
+          collapseWhitespace: true,
+        },
+      },
+    ],
   };
 };

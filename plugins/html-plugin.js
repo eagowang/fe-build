@@ -31,7 +31,7 @@ module.exports = function(env, configs) {
       // 注入的资源模块
       chunks: item.chunks,
       // manual - 按chunks指定的顺序排序
-      chunksSortMode: 'manual'
+      chunksSortMode: 'manual',
     };
 
     // 使用模板内容而不是模板文件
@@ -55,7 +55,7 @@ module.exports = function(env, configs) {
         minifyCSS: true,
         minifyJS: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       };
     } else {
       options.alwaysWriteToDisk = true;
@@ -65,7 +65,7 @@ module.exports = function(env, configs) {
   if (env === 'development') {
     plugins.push(
       new HtmlWebpackHarddiskPlugin({
-        outputPath: template.target
+        outputPath: template.target,
       })
     );
   }
