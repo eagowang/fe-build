@@ -6,7 +6,7 @@ module.exports = function(env, configs) {
     require('./css-plugin')(env, configs),
     require('./copy-plugin')(env, configs),
     ...require('./html-plugin')(env, configs),
-    ...require('./hot-plugin')(env, configs)
-    ...require('./sentry-plugin')(env, configs)
+    ...require('./hot-plugin')(env, configs),
+    ...require('./sentry-plugin')(env, configs),
   ];
 };
