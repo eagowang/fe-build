@@ -12,14 +12,6 @@ module.exports = function(env, configs) {
       path.resolve(configs.srcDir, '../node_modules/@fe'),
       ...configs.loaderInclude,
     ],
-    use: [
-      {
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: env === 'development',
-          ...babelrc(env, configs),
-        },
-      },
-    ],
+    use: 'happypack/loader?id=jsx',
   };
 };

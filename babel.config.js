@@ -1,5 +1,5 @@
-module.exports = function(api) {
-  api.cache.using();
+module.exports = function(env, configs) {
+  // api.cache.using();
   return {
     presets: [
       [
@@ -11,11 +11,11 @@ module.exports = function(api) {
           modules: false,
           // 松散模式生成的代码更少
           loose: true,
-          useBuiltIns: 'usage',
+          useBuiltIns: env === 'development' ? false : 'usage',
           debug: env === 'development',
         },
-        '@babel/preset-react',
       ],
+      ['@babel/react'],
     ],
     plugins: [
       '@babel/plugin-transform-runtime',
