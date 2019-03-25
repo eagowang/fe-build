@@ -10,6 +10,6 @@ module.exports = function(env, configs) {
       path.resolve(configs.srcDir, '../node_modules/@fe'),
       ...configs.loaderInclude,
     ],
-    use: 'happypack/loader?id=tex',
+    use: 'happypack/loader?id=tsx',
   };
 };
