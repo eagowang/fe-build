@@ -1,13 +1,15 @@
 module.exports = function(env, configs) {
-  // api.cache.using();
+  const isDev = (env = 'development');
   return {
     presets: [
       [
         '@babel/env',
         {
-          targets: {
-            browsers: configs.browsers,
-          },
+          targets: isDev
+            ? {}
+            : {
+                browsers: configs.browsers,
+              },
           modules: false,
           // 松散模式生成的代码更少
           loose: true,
