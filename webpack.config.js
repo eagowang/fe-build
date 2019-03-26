@@ -3,6 +3,22 @@ const url = require('url');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const threadLoader = require('thread-loader');
+
+threadLoader.warmup(
+  {
+    // pool options, like passed to loader options
+    // must match loader options to boot the correct pool
+  },
+  [
+    // modules to load
+    // can be any module, i. e.
+    'babel-loader',
+    'ts-loader',
+    'less-loader',
+  ]
+);
+
 // dev-server端口号，默认10000
 let devServerPort = 10000;
 

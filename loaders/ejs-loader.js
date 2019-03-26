@@ -3,6 +3,6 @@
 module.exports = function() {
   return {
     test: /\.(ejs|tpl)$/,
-    use: 'ejs-loader',
+    use: ['thread-loader', 'ejs-loader'],
   };
 };

@@ -1,5 +1,6 @@
 module.exports = function(env, configs) {
-  const isDev = (env = 'development');
+  // api.cache.using();
+  const isDev = env === 'development';
   return {
     presets: [
       [
@@ -13,8 +14,8 @@ module.exports = function(env, configs) {
           modules: false,
           // 松散模式生成的代码更少
           loose: true,
-          useBuiltIns: env === 'development' ? false : 'usage',
-          debug: env === 'development',
+          useBuiltIns: isDev ? false : 'usage',
+          debug: isDev === 'development',
         },
       ],
       ['@babel/react'],

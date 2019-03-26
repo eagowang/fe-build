@@ -9,6 +9,8 @@ module.exports = function(env, configs) {
   return {
     test: /\.less$/,
     use: [
+      'cache-loader',
+      'thread-loader',
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',

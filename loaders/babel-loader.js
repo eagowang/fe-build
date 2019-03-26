@@ -13,6 +13,8 @@ module.exports = function(env, configs) {
       ...configs.loaderInclude,
     ],
     use: [
+      'cache-loader',
+      'thread-loader',
       {
         loader: 'babel-loader',
         options: {

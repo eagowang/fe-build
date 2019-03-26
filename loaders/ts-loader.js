@@ -13,6 +13,8 @@ module.exports = function(env, configs) {
       ...configs.loaderInclude,
     ],
     use: [
+      'cache-loader',
+      'thread-loader',
       {
         loader: 'babel-loader',
         options: {
@@ -23,7 +25,7 @@ module.exports = function(env, configs) {
       {
         loader: 'ts-loader',
         options: {
-          transpileOnly: true,
+          happyPackMode: true,
           getCustomTransformers() {
             return {
               before: [tsImportPluginFactory({ style: true })],
